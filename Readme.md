@@ -35,6 +35,7 @@ You can customize the service name and display name by changing _svc_name_ and _
 Troubleshooting:
 
 Check the service_log.txt file for logs and error messages.
+
 Ensure that the required dependencies are installed and configured correctly.
 
 My Service Watchdog is a Windows service that monitors other Windows services and sends email notifications when issues are detected. It helps ensure the reliability and availability of critical services.
@@ -151,8 +152,10 @@ Use pyinstaller from a Virtual Environment: If you prefer to keep dependencies i
 python -m venv venv_name
 
 # Activate the virtual environment
+
 # On Windows:
 venv_name\Scripts\activate
+
 # On macOS and Linux:
 source venv_name/bin/activate
 
@@ -167,7 +170,7 @@ pyinstaller --name MyService --hidden-import=win32timezone <PathToYourScript>
 
 Specifically:
 
-pyinstaller --name MyService --hidden-import=win32timezone C:<Insert the exact path to the location of the project folder here>\Watchdog_service\app.py
+pyinstaller --name MyService --hidden-import=win32timezone C:<Insert the exact path to the location of the project folder here>\My_Windows_Service\app.py
 
 This command will create a dist folder with an executable file named MyService.exe.
 
