@@ -83,36 +83,6 @@ Error handling is enhanced to provide better diagnostic information.
 
 The SvcDoRun method is wrapped in a try-except block to handle any unexpected errors that may occur during service execution.
 
-Table of Contents:
-
-Installation
-
-Usage
-
-Configuration
-
-Installation:
-
-To install My Service Watchdog, follow these steps:
-
-Download the latest release.
-
-Extract the contents to a directory of your choice.
-
-Open a command prompt as administrator.
-
-Navigate to the directory where you extracted the files.
-
-Run the following command to install the service:
-
-sc create MyService binPath= "C:\path\to\MyService.exe"
-
-Start the service:
-
-sc start MyService
-
-Usage:
-
 Once the service is installed and running, it will monitor the services specified in the config.json file. You can view the service logs in the Windows Event Viewer under "Windows Logs" > "Application." Look for entries related to "My Windows Service."
 
 Configuration
@@ -151,6 +121,10 @@ If these service names and dependencies are correct, you can proceed to use this
 Additionally, configure the email settings in the MyService class in the code to enable email notifications.
 
 To implement this service code follow these steps:
+
+git clone https://github.com/SergeyReizman/My_Windows_Service.git
+
+cd My_Windows_Service
 
 Install Required Dependencies:
 
@@ -201,13 +175,14 @@ Once you've successfully run the pyinstaller command, you can proceed with the r
 
 Install the Service:
 
-Install the service using the following command (you need to specify the full path to the MyService.exe file):
+Install the service using the following command 
+(you need to specify the full path to the MyService.exe file):
 
 sc create MyService binPath= "<FullPathToMyService.exe>"
 
 Specifically:
 
-C:<Insert the exact path to the location of the project folder here>\Watchdog_service\dist\MyService.exe
+C:<Insert the exact path to the location of the project folder here>\My_Windows_Service\dist\MyService.exe
 
 Start the Service:
 
